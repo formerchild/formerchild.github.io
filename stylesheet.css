@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'Syne';
+    src: url('fonts/Syne-Bold.woff2') format('woff2'),
+        url('fonts/Syne-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Syne';
+    src: url('fonts/Syne-Italic.woff2') format('woff2'),
+        url('fonts/Syne-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'WilliamsCaslonText';
+    src: url('fonts/WilliamsCaslonText-Italic.woff2') format('woff2'),
+        url('fonts/WilliamsCaslonText-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HumboldtFrakturUNZ1L';
+    src: url('fonts/HumboldtFrakturUNZ1L.woff2') format('woff2'),
+        url('fonts/HumboldtFrakturUNZ1L.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+html,
+body {
+    background-color: #1D0000;
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#centeredcontent {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#cap {
+    /*position: fixed;*/
+    /*height: 100%;*/
+    order: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#cap div {
+    position: absolute;
+
+}
+
+.cap {
+    width: 1200px;
+    max-width: 80vw;
+}
+
+#paypal {
+    order: 2;
+    background-color: red;
+    width: 325px;
+    height: 70px;
+    border-radius: 35px;
+    z-index: 1000;
+    /*align-self: flex-end;*/
+    margin-bottom: 5vh;
+}
+
+p.paypal {
+    font-family: 'Syne', Arial, sans-serif;
+    font-style: italic;
+    font-size: 48px;
+    color: white;
+    text-align: center;
+}
+
+.scroll-up {
+    position: fixed;
+    /*height: 100%;*/
+    padding: 25px;
+    padding-bottom: 200px;
+    /*overflow-y: scroll;*/
+    overflow-x: hidden;
+}
+
+a.text {
+    font-family: 'WilliamsCaslonText', Times, serif;
+    font-style: italic;
+    font-size: 55px;
+    line-height: 1.1em;
+    margin-bottom: 1.25em;
+    color: red;
+}
+
+a.formerevil {
+    font-family: 'HumboldtFrakturUNZ1L';
+    font-weight: bold;
+    font-style: normal;
+    font-size: 46px;
+    letter-spacing: 1px;
+    vertical-align: -2px;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    width: auto;
+    max-width: 320px;
+    min-height: 80px;
+    margin-top: 48px;
+}
+
+.marquee {
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    fill: #9482B9;
+}
+
+.logotext {
+    fill: #fff;
+}
+
+#topGrad {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(180deg, rgba(29, 0, 0, 0) 0%, #1D0000 80%);
+    transform: rotate(-180deg);
+}
+
+#bottomGrad {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    left: 0px;
+    bottom: 0px;
+    background: linear-gradient(180deg, rgba(29, 0, 0, 0) 0%, #1D0000 80%);
+}
+
+#childchild {
+    width: 150px;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+}
+
+
+.scroll-up {
+    /* Starting position */
+    -moz-transform: translateY(60%);
+    -webkit-transform: translateY(60%);
+    transform: translateY(60%);
+    /* Apply animation to this element */
+    -moz-animation: scroll-up 100s linear infinite;
+    -webkit-animation: scroll-up 100s linear infinite;
+    animation: scroll-up 100s linear infinite;
+}
+
+/* Move it (define the animation) */
+@-moz-keyframes scroll-up {
+    0% {
+        -moz-transform: translateY(60%);
+    }
+
+    100% {
+        -moz-transform: translateY(-100%);
+    }
+}
+
+@-webkit-keyframes scroll-up {
+    0% {
+        -webkit-transform: translateY(60%);
+    }
+
+    100% {
+        -webkit-transform: translateY(-100%);
+    }
+}
+
+@keyframes scroll-up {
+    0% {
+        -moz-transform: translateY(60%);
+        /* Browser bug fix */
+        -webkit-transform: translateY(60%);
+        /* Browser bug fix */
+        transform: translateY(60%);
+    }
+
+    100% {
+        -moz-transform: translateY(-100%);
+        /* Browser bug fix */
+        -webkit-transform: translateY(-100%);
+        /* Browser bug fix */
+        transform: translateY(-100%);
+    }
+}
