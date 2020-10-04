@@ -57,6 +57,17 @@ body {
     justify-content: center;
 }
 
+#hell {
+    display: flex;
+    justify-content: center;
+
+}
+
+#hellImage {
+    max-width: 100%;
+    margin-bottom: 25px;
+}
+
 #centeredcontent {
     display: flex;
     justify-content: space-between;
@@ -80,19 +91,26 @@ body {
 }
 
 .cap {
-    width: 1200px;
+    /*width: 1200px;*/
     max-width: 80vw;
 }
 
-#paypal {
+#purchase {
     order: 2;
-    background-color: red;
-    width: 325px;
-    height: 70px;
-    border-radius: 35px;
+    /*   display: flex;
+    flex-direction: column;
+    align-content: center;*/
+    margin-bottom: 7vh;
     z-index: 1000;
-    /*align-self: flex-end;*/
-    margin-bottom: 5vh;
+}
+
+#paypal {
+    background-color: red;
+    height: 4em;
+    border-radius: 35px;
+    padding-left: 2em;
+    padding-right: 2em;
+    box-shadow: 0px 0px 20px;
 }
 
 p.paypal {
@@ -100,16 +118,29 @@ p.paypal {
     font-style: italic;
     font-size: 48px;
     color: white;
-    text-align: center;
+    padding-bottom: 0.1em;
 }
 
-.scroll-up {
-    position: fixed;
-    /*height: 100%;*/
-    padding: 25px;
-    padding-bottom: 200px;
-    /*overflow-y: scroll;*/
-    overflow-x: hidden;
+#price {
+    position: relative;
+    left: 150px;
+    bottom: 100px;
+    width: 9em;
+    height: 3.5em;
+    padding: 0.125em 0.5em 0.125em 0.5em;
+    background: #00ff7f;
+    transform: rotate(14deg);
+    box-shadow: 0px 0px 20px;
+    text-align: center;
+
+
+}
+
+p.price {
+    font-family: 'Syne', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 38px;
+    color: black;
 }
 
 a.text {
@@ -190,20 +221,28 @@ a.formerevil {
 
 
 .scroll-up {
-    /* Starting position */
-    -moz-transform: translateY(60%);
-    -webkit-transform: translateY(60%);
-    transform: translateY(60%);
-    /* Apply animation to this element */
-    -moz-animation: scroll-up 100s linear infinite;
-    -webkit-animation: scroll-up 100s linear infinite;
-    animation: scroll-up 100s linear infinite;
+    position: fixed;
+    /*height: 100%;*/
+    padding: 25px;
+    padding-bottom: 200px;
+    /*overflow-y: scroll;*/
+    overflow-x: hidden;
 }
 
-/* Move it (define the animation) */
-@-moz-keyframes scroll-up {
+.scroll-up {
+    -moz-transform: translateY(27%);
+    -webkit-transform: translateY(27%);
+    transform: translateY(27%);
+    
+    -moz-animation: scroll-up 190s linear infinite;
+    -webkit-animation: scroll-up 190s linear infinite;
+    animation: scroll-up 190s linear infinite;
+}
+
+/*Move it (define the animation) */
+/*@-moz-keyframes scroll-up {
     0% {
-        -moz-transform: translateY(60%);
+        -moz-transform: translateY(75%);
     }
 
     100% {
@@ -213,21 +252,29 @@ a.formerevil {
 
 @-webkit-keyframes scroll-up {
     0% {
-        -webkit-transform: translateY(60%);
+        -webkit-transform: translateY(75%);
     }
 
     100% {
         -webkit-transform: translateY(-100%);
     }
 }
-
+*/
 @keyframes scroll-up {
     0% {
-        -moz-transform: translateY(60%);
+        -moz-transform: translateY(27%);
         /* Browser bug fix */
-        -webkit-transform: translateY(60%);
+        -webkit-transform: translateY(27%);
         /* Browser bug fix */
-        transform: translateY(60%);
+        transform: translateY(27%);
+    }
+
+    18.947% {
+        -moz-transform: translateY(-20%);
+        /* Browser bug fix */
+        -webkit-transform: translateY(-20%);
+        /* Browser bug fix */
+        transform: translateY(-20%);
     }
 
     100% {
