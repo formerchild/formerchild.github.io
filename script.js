@@ -86,25 +86,50 @@
 
 $(document).ready(function() {
 
+    var marqueeMoving = false;
+
+
     $("#childchild").on("click", function() {
         $("#modal").css("display", "flex");
+        $("#audio").prop('muted', true);
 
     });
 
     $("#close").on("click", function() {
         $("#modal").css("display", "none");
-        $("#audio").play();
+        if ($("#scroll-up").css("animation-play-state") == "paused") {
+            $("#scroll-up").css("animation-play-state", "running");
+        }
+        if ($("#audio").prop('paused') == true) {
+            $("#audio").get(0).play();
+            $("#audio").prop('muted', false);
+            console.log("playing audio");
+        } else $("#audio").prop('muted', false);
+
+        if (marqueeMoving == false) {
+            $('.marquee').marqueeify({
+                speed: 200
+            });
+            marqueeMoving = true;
+
+        }
     });
 
     $(window).on('click', function(event) {
         if (event.target.id == 'modal') {
-            console.log("clicked");
+            console.log("clicked outside of modal");
             $('#modal').css("display", "none");
-        }
-    });
 
-    $('.marquee').marqueeify({
-        speed: 200
+            if ($("#scroll-up").css("animation-play-state") == "paused") {
+                $("#scroll-up").css("animation-play-state", "running");
+            }
+
+            if ($("#audio").prop('paused') == true) {
+                $("#audio").get(0).play();
+                $("#audio").prop('muted', false);
+                console.log("playing audio");
+            } else $("#audio").prop('muted', false);
+        }
     });
 
     $("#cap > div:gt(0)").hide();
