@@ -83,7 +83,24 @@
     };
 })(jQuery, window);
 
+
 $(document).ready(function() {
+
+    $("#childchild").on("click", function() {
+        $("#modal").css("display", "flex");
+
+    });
+
+    $("#close").on("click", function() {
+        $("#modal").css("display", "none");
+    });
+
+    $(window).on('click', function(event) {
+        if (event.target.id == 'modal') {
+            console.log("clicked");
+            $('#modal').css("display", "none");
+        }
+    });
 
     $('.marquee').marqueeify({
         speed: 200
@@ -93,12 +110,12 @@ $(document).ready(function() {
 
     setInterval(function() {
         $('#cap > div:first')
-            .delay(3000)
-            .fadeOut(10)
+            .fadeOut(2000)
             .next()
-            .delay(3000)
-            .fadeIn(10)
+            .fadeIn(2000)
             .end()
             .appendTo('#cap');
     }, 3000);
+
+
 });

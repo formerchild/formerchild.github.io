@@ -6,19 +6,11 @@
     font-style: normal;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Syne';
     src: url('fonts/Syne-Italic.woff2') format('woff2'),
         url('fonts/Syne-Italic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'WilliamsCaslonText';
-    src: url('fonts/WilliamsCaslonText-Italic.woff2') format('woff2'),
-        url('fonts/WilliamsCaslonText-Italic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -30,6 +22,15 @@
         url('fonts/HumboldtFrakturUNZ1L.woff') format('woff');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Freight';
+    src: url('fonts/Freight-TextLightItalic.woff2') format('woff2'),
+        url('fonts/Freight-TextLightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
     font-display: swap;
 }
 
@@ -82,6 +83,11 @@ body {
     justify-content: center;
     margin-top: auto;
     margin-bottom: auto;
+    -webkit-transform: translatez(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    transform: translatez(0);
 }
 
 #cap div {
@@ -96,9 +102,6 @@ body {
 
 #purchase {
     order: 2;
-    /*   display: flex;
-    flex-direction: column;
-    align-content: center;*/
     margin-bottom: 7vh;
     z-index: 1000;
 }
@@ -112,47 +115,55 @@ body {
     box-shadow: 0px 0px 20px;
 }
 
-p.paypal {
+#paypalButton {
+    background-color: red;
+    height: 1.5em;
+    border: none;
+    border-radius: 35px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    box-shadow: 0px 0px 20px black;
     font-family: 'Syne', Arial, sans-serif;
     font-style: italic;
-    font-size: 48px;
+    font-size: 3em;
     color: white;
     padding-bottom: 0.1em;
 }
 
+button:focus,
+input[type="button"]:focus {
+    outline: none;
+}
+
 #price {
     position: relative;
-    left: 180px;
+    left: 190px;
     bottom: 90px;
     width: 7em;
-    /*height: 3.5em;*/
     padding: 0.25em;
-    /*background: #00ff7f;*/
     background-image: url("images/pricetag.svg");
-      background-position: center; /* Center the image */
-
+    background-position: center;
     transform: rotate(14deg);
-    /*box-shadow: 0px 0px 20px;*/
     text-align: center;
     filter: drop-shadow(0 0 0.375em black);
-
-
 }
 
 p.price {
     font-family: "syne mono", monaco, monospace;
     font-weight: normal;
-    font-size: 32px;
+    font-size: 2em;
     color: black;
     letter-spacing: 0;
 }
 
 a.text {
-    font-family: 'WilliamsCaslonText', Times, serif;
+    font-family: 'Freight', serif;
     font-style: italic;
-    font-size: 55px;
-    line-height: 1.1em;
+    font-weight: lighter;
+    font-size: 3em;
+    line-height: 1.25em;
     margin-bottom: 1.25em;
+    letter-spacing: 2.25px;
     color: red;
 }
 
@@ -160,7 +171,7 @@ a.formerevil {
     font-family: 'HumboldtFrakturUNZ1L';
     font-weight: bold;
     font-style: normal;
-    font-size: 46px;
+    font-size: 3em;
     letter-spacing: 1px;
     vertical-align: -2px;
 }
@@ -170,6 +181,7 @@ a.formerevil {
 }
 
 .tooltip span {
+    float: inherit;
     display: block;
     position: absolute;
     top: 0;
@@ -182,7 +194,7 @@ a.formerevil {
 }
 
 .marquee {
-    display: block;
+    /*display: none;*/
     left: 0;
     position: absolute;
     top: 0;
@@ -223,46 +235,68 @@ a.formerevil {
     top: 25px;
 }
 
-.modal {display: block;
+.modal {
     position: fixed;
+    /* Stay in place */
     z-index: 2000;
     left: 0;
     top: 0;
     width: 100%;
+    /* Full width */
     height: 100%;
-    overflow: auto;
-    backdrop-filter: blur(15px)brightness(80%);
+    /* Full height */
+    backdrop-filter: blur(15px) brightness(80%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.modalInner {
-        z-index: 2000;
-color: white;
+.modalContent {
+    z-index: 2000;
+    background-color: #DEE6E4;
+    width: 25vw;
+    /*padding: 0px 5px;*/
+    padding: 20px 25px;
+
+    font-family: 'WilliamsCaslonText', Times, serif;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*box-shadow: 0 0 25px 40px #DEE6E4;*/
 }
 
+#close {
+    align-self: center;
+    text-align: center;
+    background-color: white;
+    border-radius: 35px;
+    width: 20vw;
+    margin-top: 20px;
+}
 
-.scroll-up {
+#scroll-up {
     position: fixed;
     /*height: 100%;*/
     padding: 25px;
     padding-bottom: 200px;
     /*overflow-y: scroll;*/
     overflow-x: hidden;
-}
 
-.scroll-up {
     -moz-transform: translateY(27%);
     -webkit-transform: translateY(27%);
     transform: translateY(27%);
-    
-    -moz-animation: scroll-up 190s linear infinite;
-    -webkit-animation: scroll-up 190s linear infinite;
-    animation: scroll-up 190s linear infinite;
+
+    -moz-animation: scroll-up 148s linear infinite;
+    -webkit-animation: scroll-up 148s linear infinite;
+    animation: scroll-up 148s linear infinite;
+    /*animation-play-state: paused;*/
 }
 
 /*Move it (define the animation) */
-/*@-moz-keyframes scroll-up {
+@-moz-keyframes scroll-up {
     0% {
-        -moz-transform: translateY(75%);
+        -moz-transform: translateY(27%);
     }
 
     100% {
@@ -272,14 +306,14 @@ color: white;
 
 @-webkit-keyframes scroll-up {
     0% {
-        -webkit-transform: translateY(75%);
+        -webkit-transform: translateY(27%);
     }
 
     100% {
         -webkit-transform: translateY(-100%);
     }
 }
-*/
+
 @keyframes scroll-up {
     0% {
         -moz-transform: translateY(27%);
@@ -287,14 +321,6 @@ color: white;
         -webkit-transform: translateY(27%);
         /* Browser bug fix */
         transform: translateY(27%);
-    }
-
-    18.947% {
-        -moz-transform: translateY(-20%);
-        /* Browser bug fix */
-        -webkit-transform: translateY(-20%);
-        /* Browser bug fix */
-        transform: translateY(-20%);
     }
 
     100% {

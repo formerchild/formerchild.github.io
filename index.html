@@ -12,10 +12,18 @@
 
 <body>
     <div id="content">
+        <!--         <div class="modal" id="modal">
+            <div class="modalContent">
+                <p>child child is a collaborative project by taehee wang and chuck kuan.</p>
+                <div id="close">
+                    <p>enter</p>
+                </div>
+            </div>
+        </div> -->
         <audio controls autoplay muted id="audio" loop="loop" style="display: none;">
             <source src="audio/formerevil.mp3" type="audio/mpeg">
             Your browser does not support the audio element.</audio>
-        <div class="scroll-up">
+        <div id="scroll-up">
             <div id="hell">
                 <img id="hellImage" src="images/00.png">
             </div>
@@ -39,20 +47,20 @@
                 <div><img class="cap" src="images/formerevilHat01.png"></div>
             </div>
             <div id="purchase">
-                <div id="paypal">
-                    <p class="paypal">preorder now</p>
-                    <div id="price">
-                        <p class="price">$3<span style="letter-spacing: -3px">5.</span>00</p>
-                    </div>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="T3M9F57RUFT78">
+                    <button id="paypalButton" type="submit" name="submit" alt="preorder now">preorder now</button>
+                    <!-- <input type="image" src="images/01.png" border="0" name="submit" alt="preorder now"> -->
+                </form>
+                <div id="price">
+                    <p class="price">$3<span style="letter-spacing: -3px">5.</span>00</p>
                 </div>
             </div>
         </div>
         <div id="topGrad"></div>
         <div id="bottomGrad"></div>
-        <img id="childchild" src="images/childchild.svg" alt="a logo depicting the words child child">
-<!--         <div class="modal" id="modal">
-            <div class="modalInner"><p>hello</p></div>
-        </div> -->
+        <img id="childchild" src="images/childchild.svg" alt="child child logo">
     </div>
 </body>
 
