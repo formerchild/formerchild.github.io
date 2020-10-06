@@ -93,6 +93,7 @@ $(document).ready(function() {
 
     $("#close").on("click", function() {
         $("#modal").css("display", "none");
+        $("#audio").play();
     });
 
     $(window).on('click', function(event) {
