@@ -97,6 +97,7 @@ $(document).ready(function() {
 
     $("#close").on("click", function() {
         $("#modal").css("display", "none");
+
         if ($("#scroll-up").css("animation-play-state") == "paused") {
             $("#scroll-up").css("animation-play-state", "running");
         }
@@ -110,8 +111,8 @@ $(document).ready(function() {
             $('.marquee').marqueeify({
                 speed: 200
             });
+            $('.marquee').css("display", "block");
             marqueeMoving = true;
-
         }
     });
 
@@ -127,8 +128,16 @@ $(document).ready(function() {
             if ($("#audio").prop('paused') == true) {
                 $("#audio").get(0).play();
                 $("#audio").prop('muted', false);
-                console.log("playing audio");
             } else $("#audio").prop('muted', false);
+
+            if (marqueeMoving == false) {
+                $('.marquee').marqueeify({
+                    speed: 200
+                });
+                $('.marquee').css("display", "block");
+                marqueeMoving = true;
+
+            }
         }
     });
 
@@ -136,12 +145,12 @@ $(document).ready(function() {
 
     setInterval(function() {
         $('#cap > div:first')
-            .fadeOut(2000)
+            .fadeOut(1000)
             .next()
-            .fadeIn(2000)
+            .fadeIn(1000)
             .end()
             .appendTo('#cap');
-    }, 3000);
+    }, 4000);
 
 
 });

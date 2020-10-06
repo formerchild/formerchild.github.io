@@ -203,7 +203,7 @@ a.formerevil {
 }
 
 .marquee {
-    /*display: none;*/
+    display: none;
     left: 0;
     position: absolute;
     top: 0;
@@ -314,7 +314,7 @@ a.formerevil {
     position: fixed;
     /*height: 100%;*/
     padding: 25px;
-    padding-bottom: 200px;
+    padding-bottom: 250px;
     /*overflow-y: scroll;*/
     overflow-x: hidden;
 
@@ -322,9 +322,9 @@ a.formerevil {
     -webkit-transform: translateY(27%);
     transform: translateY(27%);
 
-    -moz-animation: scroll-up 150s linear infinite;
-    -webkit-animation: scroll-up 150s linear infinite;
-    animation: scroll-up 150s linear infinite;
+    -moz-animation: scroll-up 168s linear infinite;
+    -webkit-animation: scroll-up 168s linear infinite;
+    animation: scroll-up 168s linear infinite;
     animation-play-state: paused;
 }
 
@@ -332,6 +332,10 @@ a.formerevil {
 @-moz-keyframes scroll-up {
     0% {
         -moz-transform: translateY(27%);
+    }
+
+    99.97% {
+        -moz-transform: translateY(-100%);
     }
 
     100% {
@@ -342,6 +346,10 @@ a.formerevil {
 @-webkit-keyframes scroll-up {
     0% {
         -webkit-transform: translateY(27%);
+    }
+
+    99.97% {
+        -webkit-transform: translateY(-100%);
     }
 
     100% {
@@ -356,6 +364,13 @@ a.formerevil {
         -webkit-transform: translateY(27%);
         /* Browser bug fix */
         transform: translateY(27%);
+    }
+
+    99.97% {
+        -moz-transform: translateY(-100%);
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+
     }
 
     100% {
