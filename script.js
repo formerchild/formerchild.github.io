@@ -133,11 +133,15 @@ $(document).ready(function() {
             $("#audio").prop('muted', true);
             $("#volume").text("unmute");
             userMuted = true;
+            $("#volume").toggleClass("mute unmute");
+
             // console.log("userMuted: " + userMuted);
         } else if ($("#audio").prop('muted') == true) {
             $("#audio").prop('muted', false);
             $("#volume").text("mute");
             userMuted = false;
+                        $("#volume").toggleClass("mute unmute");
+
             // console.log("userMuted: " + userMuted);
         }
     });

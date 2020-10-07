@@ -67,14 +67,8 @@ body {
 }
 
 #hell {
-    display: flex;
-    justify-content: center;
-
-}
-
-#hellImage {
-    max-width: 100%;
-    margin-bottom: 25px;
+    width: 100%;
+    /*margin-bottom: 25px;*/
 }
 
 #centeredcontent {
@@ -111,18 +105,16 @@ body {
 }
 
 #purchase {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
     order: 2;
     margin-bottom: 5vh;
     z-index: 1000;
-}
-
-#paypal {
-    background-color: red;
-    height: 4em;
-    border-radius: 35px;
-    padding-left: 2em;
-    padding-right: 2em;
-    box-shadow: 0px 0px 20px;
 }
 
 #paypalButton {
@@ -138,6 +130,8 @@ body {
     font-size: 3em;
     color: white;
     padding-bottom: 0.1em;
+    cursor: url(images/purchase.png), pointer !important;
+
 }
 
 button:focus,
@@ -156,6 +150,7 @@ input[type="button"]:focus {
     transform: rotate(14deg);
     text-align: center;
     filter: drop-shadow(0 0 0.375em black);
+    cursor: default;
 }
 
 p.price {
@@ -242,7 +237,9 @@ a.formerevil {
     width: 150px;
     position: absolute;
     right: 25px;
-    top: 25px;
+    top: 25px;    
+    cursor: url(images/childchild.png), pointer !important;
+
 }
 
 #topGrad {
@@ -265,6 +262,19 @@ a.formerevil {
 }
 
 #volume {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
     font-family: 'Syne', sans-serif;
     font-style: italic;
     position: absolute;
@@ -274,21 +284,38 @@ a.formerevil {
     bottom: 25px;
 }
 
+.mute {
+    cursor: url(images/mute.png), pointer !important;
+
+}
+
+.unmute {
+    cursor: url(images/unmute.png), pointer !important;
+}
+
 .modal {
     position: fixed;
-    /* Stay in place */
     z-index: 2000;
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
-    backdrop-filter: blur(15px) brightness(80%);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+@supports (backdrop-filter: none) {
+    .modal {
+        backdrop-filter: blur(15px) brightness(80%);
+    }
+}
+
+@supports (-webkit-backdrop-filter: none) {
+    .modal {
+        -webkit-backdrop-filter: blur(15px) brightness(80%);
+    }
 }
 
 .modalContent {
@@ -337,6 +364,7 @@ a.formerevil {
     padding: 0 25px;
     padding-bottom: 5px;
     margin-top: 37.5px;
+        cursor: url(images/close.png), pointer !important;
 
     /*margin-top: 20px;*/
     /*vertical-align: 1px;*/
