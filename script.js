@@ -85,6 +85,7 @@
 
 
 $(document).ready(function() {
+    var scrolledAway = false;
     var hidden, visibilityChange;
 
     if (typeof document.hidden !== "undefined") {
@@ -105,7 +106,13 @@ $(document).ready(function() {
 
     function handleVisibilityChange() {
         if (userMuted == false && $("#modal").css("display") == 'none') {
-            $("audio").prop('muted', document[hidden]);
+            $("#audio").prop('muted', document[hidden]);
+        }
+
+        if (scrolledAway == !document[hidden] && $("#modal").css("display") == 'none') {
+            $("#sigh").get(0).load();
+            $("#sigh").get(0).play();
+            console.log("why did you leave?")
         }
 
     }
@@ -125,7 +132,7 @@ $(document).ready(function() {
             .fadeIn(speed)
             .end()
             .appendTo('#cap');
-    }    
+    }
 
 
     $("#volume").on("click", function() {
@@ -140,7 +147,7 @@ $(document).ready(function() {
             $("#audio").prop('muted', false);
             $("#volume").text("mute");
             userMuted = false;
-                        $("#volume").toggleClass("mute unmute");
+            $("#volume").toggleClass("mute unmute");
 
             // console.log("userMuted: " + userMuted);
         }
@@ -160,11 +167,7 @@ $(document).ready(function() {
         if ($("#scroll-up").css("animation-play-state") == "paused") {
             $("#scroll-up").css("animation-play-state", "running");
         }
-
-        if (slideShowStarted == false) {
-            slideShowStarted = true
-            console.log("slide show started: " + slideShowStarted);
-        }
+        $("sigh").prop('muted', true);
 
         if ($("#audio").prop('paused') == true) {
             $("#audio").get(0).play();
@@ -214,8 +217,8 @@ $(document).ready(function() {
 
     $("#cap > div:gt(0)").hide();
 
-// if (slideShowStarted == true){
-//     console.log('slideshow started '+ slideShowStarted);
+    // if (slideShowStarted == true){
+    //     console.log('slideshow started '+ slideShowStarted);
 
 
     setInterval(function() {
@@ -226,7 +229,7 @@ $(document).ready(function() {
             .end()
             .appendTo('#cap');
     }, 5000);
-    
+
 
 
 
