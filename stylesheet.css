@@ -105,12 +105,18 @@ body {
 }
 
 #purchase {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
     order: 2;
     margin-bottom: 5vh;
@@ -237,7 +243,7 @@ a.formerevil {
     width: 150px;
     position: absolute;
     right: 25px;
-    top: 25px;    
+    top: 25px;
     cursor: url(images/childchild.png), pointer !important;
 
 }
@@ -321,19 +327,17 @@ a.formerevil {
 .modalContent {
     z-index: 2000;
     /*background-color: #DEE6E4;*/
-    width: 25vw;
-    /*padding: 0px 5px;*/
-    /*padding: 20px 25px;*/
+    width: 35vw;
     color: white;
     font-family: freight-text-pro, serif;
     font-weight: 300;
-    font-size: 1.5em;
+    font-size: 1.75em;
     font-style: italic;
     letter-spacing: 1px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /*box-shadow: 0 0 25px 40px #DEE6E4;*/
+    /*text-align: left;*/
 }
 
 .bio {
@@ -342,13 +346,15 @@ a.formerevil {
     color: red;
 }
 
-/*#taehee {
-    color: blue;
+#taehee {
+    cursor: url(images/whitemalepainter.png), pointer !important;
+
 }
 
 #chuck {
-    color: #FFB511;
-}*/
+    cursor: url(images/duckduckchuck.png), pointer !important;
+
+}
 
 #close {
     /*align-items: center;*/
@@ -364,7 +370,7 @@ a.formerevil {
     padding: 0 25px;
     padding-bottom: 5px;
     margin-top: 37.5px;
-        cursor: url(images/close.png), pointer !important;
+    cursor: url(images/close.png), pointer !important;
 
     /*margin-top: 20px;*/
     /*vertical-align: 1px;*/
