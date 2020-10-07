@@ -85,8 +85,63 @@
 
 
 $(document).ready(function() {
+    var hidden, visibilityChange;
+
+    if (typeof document.hidden !== "undefined") {
+        hidden = "hidden";
+        visibilityChange = "visibilitychange";
+    } else if (typeof document.mozHidden !== "undefined") {
+        hidden = "mozHidden";
+        visibilityChange = "mozvisibilitychange";
+    } else if (typeof document.msHidden !== "undefined") {
+        hidden = "msHidden";
+        visibilityChange = "msvisibilitychange";
+    } else if (typeof document.webkitHidden !== "undefined") {
+        hidden = "webkitHidden";
+        visibilityChange = "webkitvisibilitychange";
+    }
+
+    document.addEventListener(visibilityChange, handleVisibilityChange, false);
+
+    function handleVisibilityChange() {
+        if (userMuted == false && $("#modal").css("display") == 'none') {
+            $("audio").prop('muted', document[hidden]);
+        }
+
+    }
+
+
 
     var marqueeMoving = false;
+
+    var userMuted = false;
+    var slideShowStarted = false;
+    console.log("slide show started: " + slideShowStarted);
+
+    function slideShow(speed) {
+        $('#cap > div:first')
+            .fadeOut(speed)
+            .next()
+            .fadeIn(speed)
+            .end()
+            .appendTo('#cap');
+    }    
+
+
+    $("#volume").on("click", function() {
+        if ($("#audio").prop('muted') == false) {
+            $("#audio").prop('muted', true);
+            $("#volume").text("unmute");
+            userMuted = true;
+            // console.log("userMuted: " + userMuted);
+        } else if ($("#audio").prop('muted') == true) {
+            $("#audio").prop('muted', false);
+            $("#volume").text("mute");
+            userMuted = false;
+            // console.log("userMuted: " + userMuted);
+        }
+    });
+
 
 
     $("#childchild").on("click", function() {
@@ -101,11 +156,21 @@ $(document).ready(function() {
         if ($("#scroll-up").css("animation-play-state") == "paused") {
             $("#scroll-up").css("animation-play-state", "running");
         }
+
+        if (slideShowStarted == false) {
+            slideShowStarted = true
+            console.log("slide show started: " + slideShowStarted);
+        }
+
         if ($("#audio").prop('paused') == true) {
             $("#audio").get(0).play();
             $("#audio").prop('muted', false);
-            console.log("playing audio");
-        } else $("#audio").prop('muted', false);
+            // console.log("audio paused: " + $("#audio").prop('paused'));
+            // console.log("audio muted: " + $("#audio").prop('muted'))
+        } else if ($("#audio").prop('paused') == false && userMuted == false) {
+            $("#audio").prop('muted', false);
+            // console.log("audio Muted: " + $("#audio").prop('muted'))
+        }
 
         if (marqueeMoving == false) {
             $('.marquee').marqueeify({
@@ -128,7 +193,9 @@ $(document).ready(function() {
             if ($("#audio").prop('paused') == true) {
                 $("#audio").get(0).play();
                 $("#audio").prop('muted', false);
-            } else $("#audio").prop('muted', false);
+            } else if ($("#audio").prop('paused') == false && userMuted == false) {
+                $("#audio").prop('muted', false);
+            };
 
             if (marqueeMoving == false) {
                 $('.marquee').marqueeify({
@@ -143,14 +210,20 @@ $(document).ready(function() {
 
     $("#cap > div:gt(0)").hide();
 
+// if (slideShowStarted == true){
+//     console.log('slideshow started '+ slideShowStarted);
+
+
     setInterval(function() {
         $('#cap > div:first')
-            .fadeOut(1000)
+            .fadeOut(500)
             .next()
-            .fadeIn(1000)
+            .fadeIn(500)
             .end()
             .appendTo('#cap');
-    }, 4000);
+    }, 5000);
+    
+
 
 
 });
