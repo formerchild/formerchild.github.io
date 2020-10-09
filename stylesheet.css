@@ -315,7 +315,7 @@ a.formerevil {
 
 @supports (backdrop-filter: none) {
     .modal {
-        backdrop-filter: blur(50px) brightness(80%);
+        backdrop-filter: blur(20px) brightness(80%);
     }
 }
 
@@ -458,17 +458,20 @@ a.formerevil {
 @media only screen and (max-width: 800px) {
 
 
-.modalContent {
-    width: 85vw;
-}
+    .modalContent {
+        width: 85vw;
+    }
 
-img.inline {
-    width: 130%;
-}
-a.formerevil, a.text{
-    font-size: 2em;
+    img.inline {
+        width: 130%;
+    }
 
-}
+    a.formerevil,
+    a.text {
+        font-size: 2em;
+
+    }
+
     .cap {
         max-width: 150vw;
     }
@@ -486,7 +489,7 @@ a.formerevil, a.text{
         left: 150px;
     }
 
-    p.price{
-        text-size:1.75em;
+    p.price {
+        text-size: 1.75em;
     }
 }
