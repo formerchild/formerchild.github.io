@@ -80,6 +80,7 @@ body {
 #cap {
     /*position: fixed;*/
     /*height: 100%;*/
+    /*z-index: 1005;*/
     order: 1;
     display: flex;
     align-items: center;
@@ -314,13 +315,13 @@ a.formerevil {
 
 @supports (backdrop-filter: none) {
     .modal {
-        backdrop-filter: blur(15px) brightness(80%);
+        backdrop-filter: blur(50px) brightness(80%);
     }
 }
 
 @supports (-webkit-backdrop-filter: none) {
     .modal {
-        -webkit-backdrop-filter: blur(15px) brightness(80%);
+        -webkit-backdrop-filter: blur(50px) brightness(80%);
     }
 }
 
@@ -338,6 +339,12 @@ a.formerevil {
     flex-direction: column;
     justify-content: center;
     /*text-align: left;*/
+}
+
+.modalSub {
+    margin-top: 25px;
+    font-size: 0.75em;
+
 }
 
 .bio {
@@ -445,5 +452,41 @@ a.formerevil {
         -webkit-transform: translateY(-100%);
         /* Browser bug fix */
         transform: translateY(-100%);
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+
+.modalContent {
+    width: 85vw;
+}
+
+img.inline {
+    width: 130%;
+}
+a.formerevil, a.text{
+    font-size: 2em;
+
+}
+    .cap {
+        max-width: 150vw;
+    }
+
+    #purchase {
+        margin-bottom: 15vh;
+
+    }
+
+    #paypalButton {
+        font-size: 2.5em;
+    }
+
+    #price {
+        left: 150px;
+    }
+
+    p.price{
+        text-size:1.75em;
     }
 }

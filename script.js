@@ -229,8 +229,24 @@ $(document).ready(function() {
             .end()
             .appendTo('#cap');
     }, 5000);
-
-
-
-
 });
+
+// code for fading in audio
+
+// audio = new Audio();
+// audio.src = "http://myst729.qiniudn.com/within-temptation_pale.mp3"
+// audio.play();
+
+// $(".mute").on("click tap", function() {
+//   var $btn = $(this);
+  
+//   var muted = audio.muted;
+//   if (muted) audio.muted = false; // It cannot be animated if it's muted
+  
+//   $btn.prop('disabled', true); // Optional
+//   $(audio).animate({volume: muted ? 1 : 0}, 2000, function() {
+//     audio.muted = !muted;
+//     $btn.text(muted ? "mute" : "unmute");
+//     $btn.prop('disabled', false); // Optional
+//   });
+// });
