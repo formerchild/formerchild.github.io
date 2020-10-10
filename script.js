@@ -213,14 +213,14 @@ $(document).ready(function() {
     //     console.log('slideshow started '+ slideShowStarted);
 
 
-    setInterval(function() {
-        $('#cap > div:first')
-            .fadeOut(500)
-            .next()
-            .fadeIn(500)
-            .end()
-            .appendTo('#cap');
-    }, 5000);
+    // setInterval(function() {
+    //     $('#cap > div:first')
+    //         .fadeOut(500)
+    //         .next()
+    //         .fadeIn(500)
+    //         .end()
+    //         .appendTo('#cap');
+    // }, 5000);
 });
 
 // code for fading in audio
