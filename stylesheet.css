@@ -78,9 +78,6 @@ body {
 }
 
 #cap {
-    /*position: fixed;*/
-    /*height: 100%;*/
-    /*z-index: 1005;*/
     order: 1;
     display: flex;
     align-items: center;
@@ -92,6 +89,7 @@ body {
     -ms-transform: translatez(0);
     -o-transform: translatez(0);
     transform: translatez(0);
+    z-index: 8;
 }
 
 #cap div {
@@ -121,7 +119,7 @@ body {
                                   supported by Chrome, Edge, Opera and Firefox */
     order: 2;
     margin-bottom: 5vh;
-    z-index: 1000;
+    z-index: 10;
 }
 
 #paypalButton {
@@ -210,7 +208,12 @@ a.formerevil {
     left: 0;
     position: absolute;
     top: 0;
-    z-index: 1000;
+    z-index: 9;
+}
+
+#marquee {
+    width: 100px;
+    height: 80px;
 }
 
 .logo {
@@ -229,6 +232,7 @@ a.formerevil {
     top: 0px;
     background: linear-gradient(180deg, rgba(29, 0, 0, 0) 0%, #1D0000 80%);
     transform: rotate(-180deg);
+    z-index: 7;
 }
 
 #bottomGrad {
@@ -238,6 +242,8 @@ a.formerevil {
     left: 0px;
     bottom: 0px;
     background: linear-gradient(180deg, rgba(29, 0, 0, 0) 0%, #1D0000 80%);
+        z-index: 7;
+
 }
 
 #childchild {
@@ -246,6 +252,7 @@ a.formerevil {
     right: 25px;
     top: 25px;
     cursor: url(images/childchild.png), pointer !important;
+    z-index: 10;
 
 }
 
@@ -257,6 +264,7 @@ a.formerevil {
     top: 0px;
     background: linear-gradient(180deg, rgba(29, 0, 0, 0) 0%, #1D0000 80%);
     transform: rotate(-180deg);
+    z-index: 8;
 }
 
 #bottomGrad {
@@ -266,6 +274,7 @@ a.formerevil {
     left: 0px;
     bottom: 0px;
     background: linear-gradient(180deg, rgba(29, 0, 0, 0) 0%, #1D0000 80%);
+    z-index: 8;
 }
 
 #volume {
@@ -289,6 +298,7 @@ a.formerevil {
     font-size: 2em;
     left: 25px;
     bottom: 25px;
+    z-index: 10;
 }
 
 .mute {
@@ -302,7 +312,7 @@ a.formerevil {
 
 .modal {
     position: fixed;
-    z-index: 2000;
+    z-index: 11;
     left: 0;
     top: 0;
     width: 100%;
@@ -326,8 +336,6 @@ a.formerevil {
 }
 
 .modalContent {
-    z-index: 2000;
-    /*background-color: #DEE6E4;*/
     width: 35vw;
     color: white;
     font-family: freight-text-pro, serif;
@@ -459,7 +467,8 @@ a.formerevil {
 
 
     .modalContent {
-        width: 85vw;
+        width: 90vw;
+        font-size: 3em;
     }
 
     img.inline {
@@ -473,23 +482,97 @@ a.formerevil {
     }
 
     .cap {
-        max-width: 150vw;
+        max-width: 300vw;
     }
 
     #purchase {
-        margin-bottom: 15vh;
-
+        margin-bottom: 7vh;
+        margin-top: -7vh;
     }
 
     #paypalButton {
-        font-size: 2.5em;
+        font-size: 5em;
+        border-radius: 75px;
     }
 
     #price {
-        left: 150px;
+        bottom: 150px;
+        left: 330px;
+        width: 11em;
+        padding: 0.5em;
     }
 
     p.price {
-        text-size: 1.75em;
+        font-size: 3em;
+    }
+
+    #volume {
+        font-size: 3.5em;
+    }
+
+    #childchild {
+        width: 262.5px;
+    }
+
+    #marquee {
+        width: 150px;
+        height: 120px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+
+    .modalContent {
+        width: 90vw;
+        font-size: 3em;
+    }
+
+    img.inline {
+        width: 130%;
+    }
+
+    a.formerevil,
+    a.text {
+        font-size: 2em;
+
+    }
+
+    .cap {
+        max-width: 300vw;
+    }
+
+    #purchase {
+        margin-bottom: 7vh;
+        margin-top: -7vh;
+    }
+
+    #paypalButton {
+        font-size: 5em;
+        border-radius: 75px;
+    }
+
+    #price {
+        bottom: 150px;
+        left: 330px;
+        width: 11em;
+        padding: 0.5em;
+    }
+
+    p.price {
+        font-size: 3em;
+    }
+
+    #volume {
+        font-size: 3.5em;
+    }
+
+    #childchild {
+        width: 262.5px;
+    }
+
+    #marquee {
+        width: 150px;
+        height: 120px;
     }
 }

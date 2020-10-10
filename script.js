@@ -83,8 +83,10 @@
     };
 })(jQuery, window);
 
-
 $(document).ready(function() {
+//     var audio = new Audio("audio/formerevil.mp3");
+// var sigh = new Audio("audio/sigh.mp3");
+
     var scrolledAway = false;
     var hidden, visibilityChange;
 
@@ -112,7 +114,7 @@ $(document).ready(function() {
         if (scrolledAway == !document[hidden] && $("#modal").css("display") == 'none') {
             $("#sigh").get(0).load();
             $("#sigh").get(0).play();
-            console.log("why did you leave?")
+            console.log("why did you leave?");
         }
 
     }
@@ -123,17 +125,7 @@ $(document).ready(function() {
 
     var userMuted = false;
     var slideShowStarted = false;
-    console.log("slide show started: " + slideShowStarted);
-
-    function slideShow(speed) {
-        $('#cap > div:first')
-            .fadeOut(speed)
-            .next()
-            .fadeIn(speed)
-            .end()
-            .appendTo('#cap');
-    }
-
+    // console.log("slide show started: " + slideShowStarted);
 
     $("#volume").on("click", function() {
         if ($("#audio").prop('muted') == false) {
