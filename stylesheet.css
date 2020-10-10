@@ -92,7 +92,7 @@ body {
     -ms-transform: translatez(0);
     -o-transform: translatez(0);
     transform: translatez(0);
-    z-index: 8;
+    z-index: 9;
 }
 
 #cap div {
@@ -121,7 +121,7 @@ body {
                                   supported by Chrome, Edge, Opera and Firefox */
     order: 2;
     margin-bottom: 5vh;
-    z-index: 10;
+    z-index: 11;
 }
 
 #paypalButton {
@@ -198,7 +198,6 @@ a.formerevil {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 998;
     width: auto;
     max-width: 320px;
     min-height: 80px;
@@ -210,7 +209,7 @@ a.formerevil {
     left: 0;
     position: absolute;
     top: 0;
-    z-index: 9;
+    z-index: 10;
 }
 
 #marquee {
@@ -254,7 +253,7 @@ a.formerevil {
     right: 25px;
     top: 25px;
     cursor: url(images/childchild.png), pointer !important;
-    z-index: 10;
+    z-index: 11;
 
 }
 
@@ -300,7 +299,7 @@ a.formerevil {
     font-size: 2em;
     left: 25px;
     bottom: 25px;
-    z-index: 10;
+    z-index: 11;
 }
 
 .mute {
@@ -314,7 +313,7 @@ a.formerevil {
 
 .modal {
     position: fixed;
-    z-index: 11;
+    z-index: 12;
     left: 0;
     top: 0;
     width: 100%;
