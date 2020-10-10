@@ -92,7 +92,7 @@ body {
     -ms-transform: translatez(0);
     -o-transform: translatez(0);
     transform: translatez(0);
-    z-index: 9;
+    z-index: 8;
 }
 
 #cap div {
@@ -117,11 +117,10 @@ body {
     -ms-user-select: none;
     /* Internet Explorer/Edge */
     user-select: none;
-    /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
     order: 2;
     margin-bottom: 5vh;
-    z-index: 11;
+    z-index: 10;
 }
 
 #paypalButton {
@@ -209,7 +208,7 @@ a.formerevil {
     left: 0;
     position: absolute;
     top: 0;
-    z-index: 10;
+    z-index: 9;
 }
 
 #marquee {
@@ -253,30 +252,10 @@ a.formerevil {
     right: 25px;
     top: 25px;
     cursor: url(images/childchild.png), pointer !important;
-    z-index: 11;
+    z-index: 10;
 
 }
 
-#topGrad {
-    position: absolute;
-    width: 100%;
-    height: 30%;
-    left: 0px;
-    top: 0px;
-    background: linear-gradient(180deg, rgba(29, 0, 0, 0) 0%, #1D0000 80%);
-    transform: rotate(-180deg);
-    z-index: 8;
-}
-
-#bottomGrad {
-    position: absolute;
-    width: 100%;
-    height: 30%;
-    left: 0px;
-    bottom: 0px;
-    background: linear-gradient(180deg, rgba(29, 0, 0, 0) 0%, #1D0000 80%);
-    z-index: 8;
-}
 
 #volume {
     -webkit-touch-callout: none;
@@ -299,7 +278,7 @@ a.formerevil {
     font-size: 2em;
     left: 25px;
     bottom: 25px;
-    z-index: 11;
+    z-index: 10;
 }
 
 .mute {
@@ -313,7 +292,7 @@ a.formerevil {
 
 .modal {
     position: fixed;
-    z-index: 12;
+    z-index: 11;
     left: 0;
     top: 0;
     width: 100%;
