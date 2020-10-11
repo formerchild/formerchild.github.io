@@ -84,8 +84,8 @@
 })(jQuery, window);
 
 $(document).ready(function() {
-//     var audio = new Audio("audio/formerevil.mp3");
-// var sigh = new Audio("audio/sigh.mp3");
+    //     var audio = new Audio("audio/formerevil.mp3");
+    // var sigh = new Audio("audio/sigh.mp3");
 
     var scrolledAway = false;
     var hidden, visibilityChange;
@@ -156,6 +156,20 @@ $(document).ready(function() {
     $("#close").on("click", function() {
         $("#modal").css("display", "none");
 
+        if (slideShowStarted == false) {
+            slideShowStarted = true;
+            console.log('slideshow started ' + slideShowStarted);
+
+            setInterval(function() {
+                $('#cap > div:first')
+                    .fadeOut(500)
+                    .next()
+                    .fadeIn(500)
+                    .end()
+                    .appendTo('#cap');
+            }, 5000);
+        }
+
         if ($("#scroll-up").css("animation-play-state") == "paused") {
             $("#scroll-up").css("animation-play-state", "running");
         }
@@ -195,7 +209,19 @@ $(document).ready(function() {
             } else if ($("#audio").prop('paused') == false && userMuted == false) {
                 $("#audio").prop('muted', false);
             };
+            if (slideShowStarted == false) {
+                slideShowStarted = true;
+                console.log('slideshow started ' + slideShowStarted);
 
+                setInterval(function() {
+                    $('#cap > div:first')
+                        .fadeOut(500)
+                        .next()
+                        .fadeIn(500)
+                        .end()
+                        .appendTo('#cap');
+                }, 5000);
+            }
             if (marqueeMoving == false) {
                 $('.marquee').marqueeify({
                     speed: 200
@@ -208,19 +234,6 @@ $(document).ready(function() {
     });
 
     $("#cap > div:gt(0)").hide();
-
-    // if (slideShowStarted == true){
-    //     console.log('slideshow started '+ slideShowStarted);
-
-
-    // setInterval(function() {
-    //     $('#cap > div:first')
-    //         .fadeOut(500)
-    //         .next()
-    //         .fadeIn(500)
-    //         .end()
-    //         .appendTo('#cap');
-    // }, 5000);
 });
 
 // code for fading in audio
@@ -231,10 +244,10 @@ $(document).ready(function() {
 
 // $(".mute").on("click tap", function() {
 //   var $btn = $(this);
-  
+
 //   var muted = audio.muted;
 //   if (muted) audio.muted = false; // It cannot be animated if it's muted
-  
+
 //   $btn.prop('disabled', true); // Optional
 //   $(audio).animate({volume: muted ? 1 : 0}, 2000, function() {
 //     audio.muted = !muted;
